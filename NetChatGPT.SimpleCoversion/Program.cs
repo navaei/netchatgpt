@@ -18,6 +18,11 @@ var request = new ChatGPTRequest
 GetPrompt:
 Console.WriteLine("Type your prompt:");
 request.Prompt = Console.ReadLine();
+if (string.IsNullOrEmpty(request.Prompt) || request.Prompt.Length < 5)
+{
+    Console.WriteLine("Finish");
+    Environment.Exit(1);
+}
 
 var httpReq = new HttpRequestMessage(HttpMethod.Post, "/v1/completions");
 httpReq.Headers.Add("Authorization", $"Bearer {chatGptApiKey}");
@@ -29,7 +34,7 @@ var httpClient = new HttpClient { BaseAddress = new Uri(openApiUrl) };
 var httpResponse = await httpClient.SendAsync(httpReq);
 var responseString = await httpResponse.Content.ReadAsStringAsync();
 var response = JsonSerializer.Deserialize<ChatGPTResponse>(responseString);
-Console.WriteLine(response.Choices.FirstOrDefault()?.Text);
+Console.WriteLine(response.Choices.FirstOrDefault()?.Text + " \n");
 goto GetPrompt;
 
 

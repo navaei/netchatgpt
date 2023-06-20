@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetChatGPT.DALLE", "NetChat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetChatGPT.HelloGPT", "NetChatGPT.HelloGPT\NetChatGPT.HelloGPT.csproj", "{9F3B78CE-CF7E-4BF6-AD6C-11FCABB5D6B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetChatGPT.SimpleCoversion", "NetChatGPT.SimpleCoversion\NetChatGPT.SimpleCoversion.csproj", "{E4F74ECC-5DC5-42C2-8785-E92CB0146ED8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetChatGPT.Conversation", "NetChatGPT.SimpleCoversion\NetChatGPT.Conversation.csproj", "{E4F74ECC-5DC5-42C2-8785-E92CB0146ED8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetChatGPT.TelegramBotApi", "NetChatGPT.TelegramBotApi\NetChatGPT.TelegramBotApi.csproj", "{6B43C965-9D1E-43E9-9018-022604EE98B5}"
 EndProject
