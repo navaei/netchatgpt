@@ -1,4 +1,5 @@
 using NetChatGPT.TelegramBotApi.Logic;
+using Newtonsoft.Json.Serialization;
 using System.Reflection;
 using Telegram.Bot;
 
@@ -16,7 +17,8 @@ var appConfig = new AppConfig()
 };
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 builder.Services.AddSingleton(appConfig);
 builder.Services.AddSingleton(new TelegramBotClient(botToken));
 builder.Services.AddTransient<IMainApp, MainApp>();

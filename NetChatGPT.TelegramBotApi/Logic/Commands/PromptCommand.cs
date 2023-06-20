@@ -29,6 +29,15 @@ namespace NetChatGPT.TelegramBotApi.Logic.Commands
         public async Task Run(ChatContext chatContext)
         {
             var response = await GetChatGptResponse(chatContext.AppConfig, chatContext.Text);
+            if (string.IsNullOrEmpty(response))
+            {
+                await chatContext.BotClient.SendTextMessageAsync(chatContext.Message.Chat.Id, "Response invalid",
+                   parseMode: ParseMode.Html, disableNotification: chatContext.DisableNotification)
+               .ConfigureAwait(false);
+                return;
+            }
+
+            response = response.Replace("\n\n", "");
             await chatContext.BotClient.SendTextMessageAsync(chatContext.Message.Chat.Id, response,
                 parseMode: ParseMode.Html, disableNotification: chatContext.DisableNotification)
             .ConfigureAwait(false);
