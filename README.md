@@ -1,5 +1,6 @@
 # NetChatGPT
-Sample apps for ChatGPT with C#(.net)
+Solution for start with ChatGPT by C#(.net)
+
 Welcome to NetChatGPT, sample applications powered by OpenAI's GPT-3 language model. This solution can engage in interactive conversations and provide informative and engaging responses on a wide range of topics.
 
 
