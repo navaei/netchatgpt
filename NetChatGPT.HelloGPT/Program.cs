@@ -2,7 +2,7 @@
 using System.Text;
 using NetChatGPT.Common;
 
-var chatGptApiKey = "YOUR-CHATGPT-API-KEY";
+var chatGptApiKey = "OPENAI_API_KEY";
 Console.WriteLine("Hello! Please Type Your Prompt:");
 var prompt = Console.ReadLine();
 
