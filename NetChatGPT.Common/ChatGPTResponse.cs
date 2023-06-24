@@ -10,8 +10,16 @@ namespace NetChatGPT.Common
             get;
             set;
         }
+        
         [JsonPropertyName("usage")]
         public ChatGPTUsage? Usage
+        {
+            get;
+            set;
+        }
+
+        [JsonPropertyName("error")]
+        public ChatGPTResponseError? Error
         {
             get;
             set;

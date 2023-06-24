@@ -34,7 +34,20 @@ var httpClient = new HttpClient { BaseAddress = new Uri(openApiUrl) };
 var httpResponse = await httpClient.SendAsync(httpReq);
 var responseString = await httpResponse.Content.ReadAsStringAsync();
 var response = JsonSerializer.Deserialize<ChatGPTResponse>(responseString);
-Console.WriteLine(response.Choices.FirstOrDefault()?.Text + " \n");
+
+if (response.Error != null)
+{
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine(response.Error.Message);
+    Console.ForegroundColor = ConsoleColor.Gray;
+}
+else
+{
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine(response.Choices.FirstOrDefault()?.Text + " \n");
+    Console.ForegroundColor = ConsoleColor.Gray;
+}
+
 goto GetPrompt;
 
 
